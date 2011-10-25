@@ -12,10 +12,14 @@
 	<![endif]-->
 
 	<!-- <script src="/media/admin/js/jquery.min.js" type="text/javascript"></script> -->
-
-
-	<script src="/media/admin/js/speedup.js" type="text/javascript"></script>
 	<script src="/media/admin/js/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/media/admin/js/jquery.metadata.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$.metadata.setType("attr", "validate");
+	});
+	</script>
+	<script src="/media/admin/js/speedup.js" type="text/javascript"></script>
 	<script src="/media/admin/js/jquery.cookie.js" type="text/javascript"></script>
 	<script src="/media/admin/js/jquery.validate.js" type="text/javascript"></script>
 	<script src="/media/admin/js/jquery.bgiframe.js" type="text/javascript"></script>
