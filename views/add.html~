@@ -1,0 +1,35 @@
+<form action="/admin/create" class="required-validate pageForm" onsubmit="return validateCallback(this, navTabAjaxDone)">
+  <div class="pageFormContent nowrap" style="overflow:auto" layouth="56">
+	{* instance,
+	filters={st=eq('')},
+	attached={wrap='<dl><dd>%s</dd></dl><div class="divider"></div>', editable=true},
+	*}
+	<input type="hidden" name="__tag" value="{{__tag}}" />
+	<input type="hidden" name="id" value="{{id}}" />
+  </div>
+  <div class="formBar">
+	<ul>
+	  <li>
+		<div class="buttonActive">
+		  <div class="buttonContent">
+			<button type="submit">Submit</button>
+		  </div>
+		</div>
+	  </li>
+	  <li>
+		<div class="button">
+		  <div class="buttonContent">
+			<button type="button" class="close">Cancel</button>
+		  </div>
+		</div>
+	  </li>
+	  <li>
+		<div class="button">
+		  <div class="buttonContent">
+			<button type="reset">Reset</button>
+		  </div>
+		</div>
+	  </li>
+	</ul>
+  </div>
+</form>

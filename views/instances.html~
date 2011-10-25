@@ -1,0 +1,36 @@
+<div class="panelBar">
+  <ul class="toolBar">
+	<li><a class="edit" href="/admin/edit?__tag={{__tag}}&id={instance_id}" target="navTab" rel="{{__tag}}_edit" title="{{__tag}}_edit"><span>Edit</span></a></li>
+  </ul>
+</div>
+<!-- <div class="tableList" layouth="25"> -->
+<table class="table" layouth="75">
+  <thead>
+	<tr>
+	  <th>id</th>
+	  {% for field,_ in pairs(fields) do %}
+	  <th>{{field}}</th>
+	  {% end %}
+	</tr>
+  </thead>
+  <tbody>
+	{% for i, instance in ipairs(instances) do %}
+	<tr target="instance_id" rel="{{instance.id}}">
+	  <td>{{instance.id}}</td>
+	  {% for k, _ in pairs(fields) do %}
+	  <td>{{instance[k]}}</td>
+	  {% end %}
+	</tr>
+	{% end %}
+  </tbody>
+</table>
+<!-- </div> -->
+<div class="panelBar hover">
+  <form id="pagerForm" action="/admin/slice" method="post">
+	<input type="hidden" name="pageNum" value="1" /><!--【必须】value=1可以写死-->
+	<input type="hidden" name="numPerPage" value="{{numPerPage}}" /><!--【可选】每页显示多少条-->
+	<input type="hidden" name="__tag" value="{{__tag}}" /><!--【可选】查询排序-->
+	<input type="hidden" name="status" value="active" />
+  </form>
+  <div class="pagination" targetType="navTab" totalCount="{{totalCount}}" numPerPage="{{numPerPage}}" pageNumShown="{{pageNumShown}}" currentPage="{{currentPage}}"></div>
+</div>
